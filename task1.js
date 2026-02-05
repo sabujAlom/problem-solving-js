@@ -16,4 +16,23 @@ Output: { i: 2, love: 2, js: 2, and: 2, coding: 1, is: 1, fun: 1 }
 Test case 2
 Input:  " Hello hello HELLO "
 Output: { hello: 3 }
- */
+*/
+
+ function wordFrequency(sentence){
+     const words = sentence.toLowerCase().split(" ");
+     const wordsCount = {};
+
+     for(let word of words){
+        
+        if(wordsCount.hasOwnProperty(word)){
+            wordsCount[word]++;
+        }
+        else{
+            wordsCount[word] = 1;
+        }
+        
+     }
+    return wordsCount;
+ }
+const output = wordFrequency('I love JS and I love coding and JS is fun');
+console.log(output);
